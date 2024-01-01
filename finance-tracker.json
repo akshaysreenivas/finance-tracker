@@ -1,0 +1,13 @@
+{
+    "displayName": "finance-tracker",
+    "appName": "finance-tracker",
+    "description": "Personel finance tracker",
+    "lastModified": "2023-11-24T15:08:38.868Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "uiOnly",
+    "templateName": "blank",
+    "createDate": "2023-11-24T15:08:38.464Z",
+    "analyticsId": "b6b6ddbe-91e3-4a11-8163-63b2032eb083",
+    "createdStudioVersion": "9.2.1"
+}

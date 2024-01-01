@@ -1,0 +1,28 @@
+{
+    "routes": [
+        {
+            "component": "dashboardComponent",
+            "path": "dashboard",
+            "children": [
+                {
+                    "path": "overview",
+                    "component": "budget_overviewComponent"
+                },
+                {
+                    "path": "transactions",
+                    "component": "recent_transactionsComponent"
+                }
+            ]
+        },
+        {
+            "path": "''",
+            "redirectTo": "dashboard/overview",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

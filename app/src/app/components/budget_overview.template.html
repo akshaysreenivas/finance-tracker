@@ -1,0 +1,15 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <h2>
+    Budget Overview</h2>
+  <h3>
+    Total Budget : {{page.expenseData.total_budget}}</h3>
+  <h3>
+    Remaining Balance : {{page.remaining}}</h3>
+  <div fxLayout="column wrap" style="margin-top:50px" fxLayoutAlign="start stretch" [fxShow]="true">
+    <h2>
+      Expense Chart</h2>
+    <div fxFlex="100" fxLayout="column wrap">
+      <canvas baseChart [datasets]="page.barChartData" style="background:889EAF; max-width:500px ; " [labels]="page.barChartLabels " [legend]="true" type="bar"></canvas>
+    </div>
+  </div>
+</div>

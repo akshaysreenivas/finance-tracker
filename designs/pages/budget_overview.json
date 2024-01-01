@@ -1,0 +1,107 @@
+[
+    {
+        "id": "sd_WhCi4AKpXcqxH2Lb",
+        "type": "tab",
+        "createdDate": "2023-11-28T14:57:05.367Z",
+        "label": "budget_overview",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "budget_overviewComponent"
+    },
+    {
+        "id": "sd_EbDEvhVGyw32j667",
+        "type": "OnInit",
+        "z": "sd_WhCi4AKpXcqxH2Lb",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_EbDEvhVGyw32j667",
+        "category": "Lifecycle Events",
+        "x": 105,
+        "y": 80,
+        "wires": [
+            [
+                "sd_1st4B0IDnz3urJYi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "budget_overviewComponent"
+    },
+    {
+        "id": "sd_jX0kiSDKrKbUktAD",
+        "type": "PageVariables",
+        "z": "sd_WhCi4AKpXcqxH2Lb",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "barChartLabels",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartLabels"
+                }
+            },
+            {
+                "textIp": "barChartData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartData"
+                }
+            },
+            {
+                "textIp": "expenseData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "data"
+                }
+            },
+            {
+                "textIp": "remaining",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "remaining"
+                }
+            }
+        ],
+        "functionName": "sd_jX0kiSDKrKbUktAD",
+        "category": "Function",
+        "x": 325,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "budget_overviewComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1st4B0IDnz3urJYi",
+        "type": "Script",
+        "z": "sd_WhCi4AKpXcqxH2Lb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.data={\n    total_budget:10000,\n    expense:{\n        Food:650,\n        Utilities:590,\n        Entertainment:800,\n        Cloths:1000,\n        Others:400\n    }\n}\npage.barChartLabels =Object.keys(bh.local.data.expense)\n    \nObject.values(bh.local.data.expense)\npage.barChartData = [\n        { data:Object.values(bh.local.data.expense), label: 'Amount' },\n    ];\n    \nbh.totalexpense = Object.values(bh.local.data.expense).reduce((sum: number, item: number)=>{\nreturn sum + item\n},0)\n\nbh.local.remaining=bh.local.data.total_budget-bh.totalexpense",
+        "functionName": "sd_1st4B0IDnz3urJYi",
+        "category": "Function",
+        "x": 205,
+        "y": 80,
+        "wires": [
+            [
+                "sd_jX0kiSDKrKbUktAD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "budget_overviewComponent",
+        "generated": true
+    }
+]

@@ -1,0 +1,45 @@
+/*Importing default angular material css theme. */
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background:#fff3e1
+}
+
+
+.right-colum{
+  display: flex;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+
+/* Apply the 'hidden' class for screens less than 768px */
+@media (max-width: 767px) {
+  .mat-drawer-inner-container {
+    display: none;
+  }
+}
+@media (min-width: 767px) {
+  .menu {
+    display: none !important;
+  }
+}
+

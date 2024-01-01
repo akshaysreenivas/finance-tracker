@@ -1,0 +1,90 @@
+[
+    {
+        "id": "sd_Ar2r5cFqxhVpkUqL",
+        "type": "tab",
+        "createdDate": "2023-11-28T15:57:34.497Z",
+        "label": "dashboard",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_PXv4SeCFfcpDBrL7",
+        "type": "OnInit",
+        "z": "sd_Ar2r5cFqxhVpkUqL",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_PXv4SeCFfcpDBrL7",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 40,
+        "wires": [
+            [
+                "sd_mSp1WXFQXYGoNfHq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_kv3TXgwlxSpcUi7m",
+        "type": "PageVariables",
+        "z": "sd_Ar2r5cFqxhVpkUqL",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "expenseData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "data"
+                }
+            }
+        ],
+        "functionName": "sd_kv3TXgwlxSpcUi7m",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mSp1WXFQXYGoNfHq",
+        "type": "Script",
+        "z": "sd_Ar2r5cFqxhVpkUqL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.data={\n    total_budget:10000,\n    remaining:6560,\n    expense:{\n        Food:650,\n        Utilities:590,\n        Entertainment:800,\n        Cloths:1000,\n        Others:400\n    }\n}\n",
+        "functionName": "sd_mSp1WXFQXYGoNfHq",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_kv3TXgwlxSpcUi7m"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    }
+]

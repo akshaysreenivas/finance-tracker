@@ -1,0 +1,130 @@
+[
+    {
+        "id": "sd_uYvXLP6RNrnlob1j",
+        "type": "tab",
+        "createdDate": "2023-11-28T14:57:49.705Z",
+        "label": "recent_transactions",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 1,
+        "generateNext": true,
+        "serviceName": "recent_transactionsComponent"
+    },
+    {
+        "id": "sd_iT45l6ubttfGlRtq",
+        "type": "OnInit",
+        "z": "sd_uYvXLP6RNrnlob1j",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_iT45l6ubttfGlRtq",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 40,
+        "wires": [
+            [
+                "sd_24yGIaxnCe3JxafU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "recent_transactionsComponent"
+    },
+    {
+        "id": "sd_KfLFa1L6gMzbHq99",
+        "type": "PageVariables",
+        "z": "sd_uYvXLP6RNrnlob1j",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "transactions",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "transactions"
+                }
+            }
+        ],
+        "functionName": "sd_KfLFa1L6gMzbHq99",
+        "category": "Function",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "recent_transactionsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_24yGIaxnCe3JxafU",
+        "type": "Script",
+        "z": "sd_uYvXLP6RNrnlob1j",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.data={\n    total_budget:10000,\n    remaining:6560,\n    expense:{\n        Food:650,\n        Utilities:590,\n        Entertainment:800,\n        Cloths:1000,\n        Others:400\n    }\n}\n\nconst expenseArray = Object.entries(bh.local.data.expense).map(([name, value]) => ({ name, value }));\n\n\nbh.local.transactions=expenseArray\n",
+        "functionName": "sd_24yGIaxnCe3JxafU",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_KfLFa1L6gMzbHq99"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "recent_transactionsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Ss8AmJqajMm8fhw0",
+        "type": "PageStart",
+        "z": "sd_uYvXLP6RNrnlob1j",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "addNewTransaction",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "addNewTransaction",
+        "category": "General",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "sd_hyAjrLsl5KAzl6ZB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "recent_transactionsComponent"
+    },
+    {
+        "id": "sd_hyAjrLsl5KAzl6ZB",
+        "type": "Script",
+        "z": "sd_uYvXLP6RNrnlob1j",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nif(page.newName && page.newValue){\nbh.local.newTransaction={\n    name:page.newName,value:page.newValue\n}\npage.transactions.unshift(bh.local.newTransaction)\npage.newValue = null\npage.newName=null\n}\n\n",
+        "functionName": "sd_hyAjrLsl5KAzl6ZB",
+        "category": "Function",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "recent_transactionsComponent",
+        "generated": true
+    }
+]

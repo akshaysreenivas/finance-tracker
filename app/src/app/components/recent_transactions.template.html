@@ -1,0 +1,28 @@
+<div fxLayout="column wrap" style="margin:20px" fxLayoutAlign="center center" [fxShow]="true">
+  <h2 style="margin-top:50px">
+    Recent Transactions</h2>
+  <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+    <form style="margin-left:20px">
+      <h3>
+        Add New Transaction
+
+      </h3>
+      <div fxLayout="row wrap" style="gap:20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+          <input matInput [(ngModel)]="page.newName" name="newName" type="string" placeholder="Description" [required]="false">
+          <mat-label>Enter Description</mat-label>
+        </mat-form-field>
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+          <input matInput [(ngModel)]="page.newValue" name="newValue" type="number" placeholder="Amount" [required]="false">
+          <mat-label>Enter Amount</mat-label> <span matPrefix>&#x20B9;</span>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button style="border :1px solid #000;" color="warn" (click)="addNewTransaction()">Submit</button></div>
+    </form>
+  </div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-list *ngFor="let item of page.transactions; let i = index"><mat-list-item>
+        <h4>
+          {{item.name}} : {{item.value}}
+        </h4>
+      </mat-list-item></mat-list></div>
+</div>

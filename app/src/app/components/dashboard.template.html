@@ -1,0 +1,15 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" style="background:#fff; z-index:100;" fxLayoutAlign="space-around center" [fxShow]="true">
+    <h1>
+      Finance Tracker</h1>
+    <div fxLayout="row wrap" class="menu" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu class="menu" xPosition="after" yPosition="below" #menu="matMenu">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button routerLink="overview">Over view</button><button mat-button routerLink="transactions">Transactions</button></div>
+      </mat-menu><mat-icon style="background:#000;color:#fff">menu</mat-icon><button mat-button style="background:#000;color:#fff" class="menu" color="primary" [matMenuTriggerFor]="menu">Menu</button></div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-sidenav-container class="sidenav-container" autosize="true" [hasBackdrop]="true"><mat-sidenav #sidenav class="sidenav-container" [mode]="&apos;side&apos;" [position]="&apos;start&apos;" [opened]="true" autoFocus="true" fixedInViewport="true">
+          <div fxLayout="column wrap" style="width:25vw; padding-top:80px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="overview">Over view</button><button mat-raised-button routerLink="transactions">Transactions</button></div>
+        </mat-sidenav></mat-sidenav-container></div>
+    <div fxLayout="column wrap" style="background:#fff3e1" class="right-colum" fxLayoutAlign="center center" [fxShow]="true"><router-outlet></router-outlet></div>
+  </div>
+</div>
